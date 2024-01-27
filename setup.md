@@ -15,13 +15,14 @@ RTL Project, Do not specify sources at this time.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/38f74de0-fc16-49a7-9d9e-8abb310cb6a7)
 
-Select the `xc7a100tcsg324-1` under Parts, or find the `Nexys A7` under boards.
+Select the `xc7a100tcsg324-1` under Parts, or find the `Nexys A7` under boards. I'm using the 100T version.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/f2d72100-1305-4d85-b040-e4a10d9a965a)
 
 On the next page, click `Finish` to create your project.
 
-With your new project made, click `Create Block Design` on the left sidebar of Vivado.
+With your new project made, click `Create Block Design` on the left sidebar of Vivado.  
+![image](small image???) 
 
 Use "system" for a name if you don't have a good one off hand.
 
@@ -29,13 +30,13 @@ Use "system" for a name if you don't have a good one off hand.
 
 ## Memory Interface Generator
 
-Find your "Board" window, then find the `DDR2 SDRAM` connection and drag it into the empty block design diagram.
+Select the "Board" tab, probably in the top middle of the window, then find the `DDR2 SDRAM` connection and drag it into the empty block design diagram window, probably on the right side of your screen?. IMAGE???
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/fe03cf64-7c3d-4c94-9b7a-141a42052a95)
 
 If everything goes well, you will have a `mig_7series_0` connected situated like the picture below.
 
-Unfortunately, the auto-wiring that Vivado just did isn't quit right see [here](https://github.com/viktor-nikolov/MicroBlaze-DDR3-tutorial/blob/main/README.md#1-mig-input-reference-clock-must-be-200-mhz) for details
+Unfortunately, the auto-wiring that Vivado just did isn't quite right see [here](https://github.com/viktor-nikolov/MicroBlaze-DDR3-tutorial/blob/main/README.md#1-mig-input-reference-clock-must-be-200-mhz) for details
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/1300ce56-3942-41e9-8712-4d87ca507a53)
 
@@ -43,7 +44,7 @@ Delete both `clk_ref_i` and `sys_clk_i`.
 
 Double-click the MIG to reconfigure it.
 
-Click next until you get to the "Memory Options" page.
+Click next until you get to the "Memory Options" page (see below). (my clock speeds are pretty different than yours???)
 
 Disable the "Select Additional Clocks" checkbox.
 
@@ -63,15 +64,16 @@ Click next until you finish the MIG configuration.
 
 Download [Nexys-A7-100T-Master.xdc](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-100T-Master.xdc) from the [Digilent GitHub](https://github.com/Digilent).
 
-Find your "Source" window and click the plus button to add sources.
+Find your "Source" tab/window and click the plus button to add sources.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/116b8133-3a88-47a3-a81a-4574da3413b6)
 
-Select constraints and add the file your just downloaded. Make sure to select the "Copy constraints files into project" checkbox.
+Select constraints and add the file you just downloaded. Make sure to select the "Copy constraints files into project" checkbox.
 
 ![image](https://github.com/THE9rtyt/microblaze_phys333/assets/83201905/f0ecdb4f-2f6c-48b3-9c5d-08f4190b2c14)
 
 Open the added constraints file in Vivado. uncomment lines 7, 8, and 74 for the `CLK100MHZ` and `CPU_RESETN` ports.
+SCREENGRAB COULD BE USEFUL TO SHOW LINES?
 
 Save your constraints file and go back to the block design diagram.
 
