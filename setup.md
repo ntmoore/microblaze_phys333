@@ -5,6 +5,12 @@ This setup wouldn't have been possible without these tutorials:
 
 # Getting started in Vivado
 
+First install Vivado and Vitus.  The Windows/Linux install option of the installer this guide uses is shown below.  The installer comes from https://www.xilinx.com/support/download.html 
+
+![image](https://github.com/THE9rtyt/microblaze_phys333/assets/8883386/3908cfe9-0d31-4f68-9b7f-bc68dcae000c)
+
+
+
 ## Make a new project
 
 Make a new Project, give it a name.
